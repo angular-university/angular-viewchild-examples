@@ -1,14 +1,23 @@
 
 <div class="container">
 
-  <span>Primary Color: </span>
+  <h2>Choose Brand Colors:</h2>
 
-  <input name="primaryColor"
-         [(colorPicker)]="primaryColor"
-         [style.background]="primaryColor"
-         [(ngModel)]="primaryColor"/>
+
+  <mat-input-container>
+
+    <mat-label>Primary Color</mat-label>
+    <input matInput name="primaryColor"
+           [(colorPicker)]="primaryColor"
+           [style.background]="primaryColor"
+           [(ngModel)]="primaryColor"/>
+
+  </mat-input-container>
+
+
 
 
 </div>
+
 
 

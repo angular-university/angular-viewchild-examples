@@ -5,16 +5,21 @@
 
   <div class="form-field">
 
-    <color-sample [color]="primaryColor" #primarySample></color-sample>
+    <color-sample
+      [color]="primary"
+      #primaryColorSample
+      (click)="open()">
+
+    </color-sample>
 
     <mat-input-container>
 
       <mat-label>Primary Color</mat-label>
 
-      <input matInput name="primaryColor"
-             [(colorPicker)]="primaryColor"
+      <input #primaryInput  name="primary"
+             [(colorPicker)]="primary" matInput
              cpPosition="bottom"
-             [(ngModel)]="primaryColor"/>
+             [(ngModel)]="primary"/>
 
     </mat-input-container>
 

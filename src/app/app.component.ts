@@ -1,31 +1,45 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {ColorSampleComponent} from './color-sample/color-sample.component';
-import {MatIcon} from '@angular/material';
+import {ColorPickerDirective} from 'ngx-color-picker';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements  AfterViewInit {
 
-  primaryColor = '#1976d2';
+  primary = '#1976d2';
 
 
-  @ViewChild(MatIcon)
-  primaryColorSample: any;
+  @ViewChild('primaryColorSample')
+  primarySampleComponent: ColorSampleComponent;
 
-  ngOnInit() {
+  @ViewChild('primaryColorSample', {read: ElementRef})
+  primarySampleDiv: ElementRef;
 
-    console.log("primaryColorSample on ngOnInit():", this.primaryColorSample);
+  @ViewChild('primaryInput')
+  primaryInput: ElementRef;
 
-  }
+  @ViewChild('primaryInput', {read:ColorPickerDirective})
+  colorPickerDirective: ColorPickerDirective;
 
   ngAfterViewInit() {
 
-    console.log("primaryColorSample on ngAfterViewInit():", this.primaryColorSample);
+    console.log('Values on ngAfterViewInit():');
+
+    console.log("primaryColorSample:", this.primarySampleComponent);
+
+    console.log("primarySampleDiv:", this.primarySampleDiv);
+
+    console.log("primaryInput:", this.primaryInput);
 
   }
+
+  open() {
+    this.colorPickerDirective.openDialog();
+  }
+
 
 
 }

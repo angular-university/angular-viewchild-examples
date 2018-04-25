@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'color-sample',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./color-sample.component.css']
 })
 export class ColorSampleComponent implements OnInit {
+
+  @Input() color;
 
   constructor() { }
 

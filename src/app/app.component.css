@@ -7,3 +7,17 @@
   padding-top: 100px;
   margin: 0 auto;
 }
+
+h2 {
+  margin-bottom: 40px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.form-field color-sample {
+  margin-right: 20px;
+}

@@ -36,7 +36,7 @@ export class AppComponent implements  AfterViewInit {
 
   }
 
-  open() {
+  openColorPicker() {
     this.colorPickerDirective.openDialog();
   }
 
